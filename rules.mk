@@ -110,7 +110,7 @@ LDLIBS += -Wl,--start-group -lc -lgcc -lnosys -Wl,--end-group
 %: s.%
 %: SCCS/s.%
 
-all: $(PROJECT).elf $(PROJECT).bin
+all: $(PROJECT).elf $(PROJECT).bin post-build
 flash: $(PROJECT).flash
 
 # error if not using linker script generator
@@ -169,8 +169,13 @@ else
 		$(NULL)
 endif
 
+post-build: $(PROJECT).elf
+	@echo "Copying and renaming the .elf file..."
+	@cp $(PROJECT).elf ../../debug_target.elf
+
 clean:
 	rm -rf $(BUILD_DIR) $(GENERATED_BINS)
+	rm ../../debug_target.elf
 
 .PHONY: all clean flash
 -include $(OBJS:.o=.d)

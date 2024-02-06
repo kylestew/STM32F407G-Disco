@@ -7,7 +7,7 @@
             "request": "launch",
             "servertype": "openocd",
             "cwd": "${fileDirname}",
-            "executable": "${fileDirname}/*.elf",
+            "executable": "${workspaceRoot}/debug_target.elf",
             "configFiles": ["interface/stlink-v2-1.cfg", "target/stm32f4x.cfg"],
             "openOCDLaunchCommands": ["init", "reset init"],
             "preLaunchTask": "Build all"
