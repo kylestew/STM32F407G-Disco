@@ -36,7 +36,7 @@ int main(void) {
     while (1) {
         // toggle LED on/off
         gpio_toggle(GPIOD, GPIO13);
-        delay(100000);
+        delay(400000);
     }
 
     return 0;

@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${fileDirname}",
+            "executable": "${fileDirname}/*.elf",
+            "configFiles": ["interface/stlink-v2-1.cfg", "target/stm32f4x.cfg"],
+            "openOCDLaunchCommands": ["init", "reset init"],
+            "preLaunchTask": "Build all"
+            // "svdFile": "./.vscode/STM32H750x.svd"
+        }
+    ]
+}
