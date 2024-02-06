@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "gcc",
+            "includePath": ["${workspaceFolder}/**", "${workspaceFolder}/libopencm3/include"],
+            "defines": ["STM32F4"],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-x86"
+        }
+    ],
+    "version": 4
+}
